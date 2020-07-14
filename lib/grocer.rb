@@ -18,7 +18,10 @@ def consolidate_cart(cart)
   newcart={}
     cart.each do |items|
      items.each do |item, value|
-       if newcart
+       if newcart[item]
+         newcart[item][:count] += 1
+       else
+         newcart[item]
 end 
 newcart 
 end
