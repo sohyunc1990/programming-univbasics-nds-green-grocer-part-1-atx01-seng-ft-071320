@@ -17,11 +17,8 @@ def consolidate_cart(cart)
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   newcart={}
     cart.each do |items|
-     items.each do |item, attribute|
-      newcart[item] ||= attribute
-      newcart[item][:count] ? newcart[item][:count] += 1 :   
-      newcart[item][:count] = 1 
-  end 
+     items.each do |item, value|
+       if item
 end 
 newcart 
 end
