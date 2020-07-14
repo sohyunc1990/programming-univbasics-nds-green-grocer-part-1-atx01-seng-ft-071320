@@ -17,13 +17,13 @@ def consolidate_cart(cart)
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   newcart={}
     cart.each do |items|
-     items.each do |item, value|
+     items.each do |name, value|
        binding.pry
-       if newcart[item]
-         newcart[item][:count] += 1
+       if newcart[name]
+         newcart[name][:count] += 1
        else
-         newcart[item] = value
-         newcart[item][:count] = 1
+         newcart[name] = value
+         newcart[name][:count] = 1
        end
      end
     end 
