@@ -11,23 +11,20 @@ end
     
 
 def consolidate_cart(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This returns a new Array that represents the cart. Don't merely
-  # change `cart` (i.e. mutate) it. It's easier to return a new thing.
-  newcart={}
-    cart.each do |items|
-     items.each do |name, value|
-       if newcart[name]
-         newcart[name][:count] += 1
-       else
-         newcart[name] = value
-         newcart[name][:count] = 1
-       end
-     end
-    end 
-  newcart 
+  new_cart = {}
+  cart.each do |hash| #hash is the whole array
+    hash.each do |name, describe| #name: avocado, cheese. describe: price, clearance
+      #if new_cart has name and count already, increase the count
+      if new_cart[name]
+        new_cart[name][:count] += 1
+      #new_cart is empty so set name as key and describe as value
+      else
+        new_cart[name] = describe
+        new_cart[name][:count] = 1 #set count = 1 cuz we set name and describe for 1 item
+      end
+    end
+  end
+  new_cart
 end
-
 
   
